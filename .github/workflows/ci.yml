@@ -14,16 +14,3 @@ jobs:
           python-version: 3.x
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
-
-
-
-
-
-
-
-
-
-
-
-
-      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
