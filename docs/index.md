@@ -1,17 +1,21 @@
-# Welcome to MkDocs
+# Загальна інформація
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Інформація про місце навчання автора
 
-## Commands
+КНУ імені Тараса Шевченка
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Факультет інформаційних технологій
 
-## Project layout
+Кафедра програмних систем і технологій
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Автор
+
+Студент 4 курсу групи ІПЗ-42
+
+**Берездецький Вадим Юрійович**
+
+## Викладач
+
+Асистент кафедри програмних систем і технологій, кандидат технічних наук
+
+**Іваницька А.Ю**
