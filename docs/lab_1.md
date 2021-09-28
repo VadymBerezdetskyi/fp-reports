@@ -72,12 +72,37 @@ import Data.List
 import System.IO
 import Distribution.Compat.CharParsing (integral)
 
+deposit :: (Eq t1, Num t1, Fractional t2) => t2 -> t2 -> t1 -> t2
 deposit sum _ 0 = sum
 deposit sum percents periods = deposit (sum + (sum * percents/100)) percents (periods - 1)
+
+secondTask = do
+    putStrLn "Input the sum"
+    inputSum <- getLine
+    let sum = read inputSum :: Double
+
+    putStrLn "Input the percents"
+    inputPercents <- getLine
+    let percents = read inputPercents :: Double
+    
+    putStrLn "Input the periods number"
+    inputPeriods <- getLine
+    let periods = read inputPeriods :: Integer
+
+    print (deposit sum percents periods)
 ```
 
 ## Результати виконання
 
-## Аналіз достовірності результатів
+### Задача 1
+![Lab 1 Task 1 Results](img/lab_1_task_1_results.png)
+
+### Задача 2
+![Lab 1 Task 2 Results](img/lab_1_task_2_results.png)
 
 ## Висновки
+У ході виконання лабораторної роботи було засвоєно використання рекурсії у написанні декларативного коду для виконання обчислень.
+
+У рамках першої задачі було написано програму, що знаходить суму цифр введеного числа за допомогою рекурсивного процесу, а саме звичайної рекурсії.
+
+У рамках другої задачі було написано програму, що визначає величину депозиту по завершенню заданих користувачем періодів. Для вирішення цієї задачі застосована хвостова рекурсія.
