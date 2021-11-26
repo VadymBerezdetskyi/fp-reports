@@ -1,6 +1,7 @@
-import Text.Printf (printf)
-
+asRational :: (Show a1, Show a2) => (a1, a2) -> [Char]
 asRational rat = show (fst rat) ++ "/" ++ show (snd rat)
+
+ratLcm :: Integral a => (a, a) -> (a, a) -> a
 ratLcm rat1 rat2 = z `div` gcd (b*d) z
   where a = fst rat1
         b = snd rat1
@@ -25,7 +26,6 @@ asTrygonometric com = "z = " ++ show (getR com) ++ "(cos(" ++ phi ++ ") + isin("
   
 asAgebraic :: (Show a1, Show a2) => (a1, a2) -> String 
 asAgebraic com = "z = " ++ show (fst com) ++ " + " ++ show (snd com) ++ "i"
-
 
 secondTask = do
   let complex = [(1, 3), (4, 3)]

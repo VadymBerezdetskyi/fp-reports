@@ -1,9 +1,8 @@
 import System.IO
 import Data.Char (toLower)
 import Data.List ( elemIndex )
-import Data.Maybe
-import Data.Text
-import Distribution.Simple.Program.HcPkg (list)
+import Data.Maybe ( fromMaybe, isNothing )
+import Data.Text ()
 
 indexOf :: Eq a => a -> [a] -> Int
 indexOf el list
@@ -28,7 +27,7 @@ encrypt contents = Prelude.unlines [Prelude.unwords [if even (lIdx + 1) && even 
   where cLines = Prelude.zip [0..] [Prelude.zip [0..] (Prelude.words x) | x <- Prelude.lines contents]
 
 make = do
-  writeFile "test.txt" "Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, \nwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.\nIt has survived not only five centuries, but also the leap into electronic"
+  writeFile "test.txt" "Lorem Ipsum is asedasdasd dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, \nwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.\nIt has survived not only five centuries, but also the leap into electronic"
 
   contents <- readFile "test.txt"
   putStr contents

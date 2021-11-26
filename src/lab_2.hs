@@ -8,6 +8,7 @@ uCos x n precision =
     if (x ** n) / factorial n > precision then (x ** n) / factorial n - uCos x (n + 2) precision
     else 0
 
+y :: Double -> Double
 y x
   | x >= -1 && x <= 0 = uCos (x / 2) 0 0.0001 / uCos (x ** 2) 0 0.0001
   | x > 0 = (uCos (x / 2) 0 0.0001 ** 2) * uCos (2 * x) 0 0.0001
