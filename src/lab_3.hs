@@ -41,4 +41,4 @@ integralSimp f (I (a,b) n) =
 
 secondTask = do
     let f = \x -> cos x / sqrt (1 - x ** 2)
-    print (integralSimp f (I (0, pi/4) 100))
+    print (integralSimp f (I (0, pi/4) 1000))

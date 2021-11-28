@@ -9,7 +9,7 @@ ratLcm rat1 rat2 = z `div` gcd (b*d) z
         z = lcm (a*d) (b * fst rat2) 
 
 firstTask = do
-  let fRat = (1, 2)
+  let fRat = (2, 5)
   let sRat = (3, 4)
   let res = "Least common multiple of " ++ asRational fRat ++ " and " ++ asRational sRat ++ " is " ++ show (ratLcm fRat sRat)
   putStrLn res
