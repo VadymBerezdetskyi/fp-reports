@@ -1,0 +1,605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
+    
+    
+      
+        <title>Лабораторна робота 8 - Функціональне програмування</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.816931ca.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Функціональне програмування" class="md-header__button md-logo" aria-label="Функціональне програмування" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Функціональне програмування
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторна робота 8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Функціональне програмування" class="md-nav__button md-logo" aria-label="Функціональне програмування" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Функціональне програмування
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Загальна інформація
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_1/" class="md-nav__link">
+        Лабораторна робота 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_2/" class="md-nav__link">
+        Лабораторна робота 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_3/" class="md-nav__link">
+        Лабораторна робота 3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_4/" class="md-nav__link">
+        Лабораторна робота 4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_5/" class="md-nav__link">
+        Лабораторна робота 5
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_6/" class="md-nav__link">
+        Лабораторна робота 6
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_7/" class="md-nav__link">
+        Лабораторна робота 7
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Лабораторна робота 8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Лабораторна робота 8
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Мета
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Умова задачі
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Обгрунтування вибору середовища та мови програмування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Код програми
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Результати виконання
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Аналіз достовірності результатів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Висновки
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Мета
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Умова задачі
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Обгрунтування вибору середовища та мови програмування
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Код програми
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Результати виконання
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Аналіз достовірності результатів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Висновки
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="8">Лабораторна робота 8</h1>
+<p>Тема: Символьні обчислення мовами функціонального програмування. Операції з многочленами. </p>
+<p><strong>Варіант 1</strong></p>
+<h2 id="_1">Мета</h2>
+<p>Опанувати теоретичні основи символьних обчислень мовами функціонального програмування. Розробити програми символьного диференціювання та реалізації арифметики поліномів</p>
+<h2 id="_2">Умова задачі</h2>
+<p><img alt="Lab 8 task" src="../img/lab_8/task.png" /></p>
+<h2 id="_3">Обгрунтування вибору середовища та мови програмування</h2>
+<p>Середовище програмування: <strong><em>VS Code</em></strong></p>
+<p>Обгрунтування:</p>
+<ul>
+<li>Легкий та зручний редактор коду, який можна використовувати майже для будь-якої мови програмування.</li>
+<li>Має всі необхідні функції для програмування і працює набагато швидше в порівнянні з іншими IDE.</li>
+</ul>
+<p>Мова функціонального програмування: <strong><em>Haskell</em></strong></p>
+<p>Обгрунтування:</p>
+<ul>
+<li>Це одна з самих популярних функціональних мов програмування.</li>
+<li>Зручна та обширна документація.</li>
+<li>Звичний синтаксис.</li>
+</ul>
+<h2 id="_4">Код програми</h2>
+<p>```import Data.List ( groupBy, intercalate, sortBy )</p>
+<p>showTerm :: (Ord a, Num a, Num b, Show a, Show b, Eq b) =&gt; (a, b) -&gt; [Char] -&gt; [Char]
+showTerm term var = (if fst term &lt; 0 then "(" else "")
+  ++ (if fst term == -1 then "-" else "")
+  ++ (if fst term &gt; 1 || fst term &lt; -1 then show (fst term) else "")
+  ++ var
+  ++ (if snd term /= 1 then "^" ++ show (snd term) else "")
+  ++ (if fst term &lt; 0 then ")" else "")</p>
+<p>showZeroTerm :: (Ord a, Num a, Show a) =&gt; (a, b) -&gt; [Char]
+showZeroTerm term = (if fst term &lt; 0 then "(" else "") ++ show (fst term) ++ (if fst term &lt; 0 then ")" else "")</p>
+<p>showPoly :: (Ord a, Num b, Num a, Show a, Show b, Eq b) =&gt; [(a, b)] -&gt; [Char] -&gt; [Char]
+showPoly poly var = intercalate " + " [ if snd x == 0 then showZeroTerm x else showTerm x var | x &lt;- poly ]</p>
+<p>sortPolyDegree :: Ord a1 =&gt; (a2, a1) -&gt; (a3, a1) -&gt; Ordering
+sortPolyDegree (a1, b1) (a2, b2) = if b1 &gt; b2 then LT else GT</p>
+<p>groupPolyDegree :: Eq a1 =&gt; (a2, a1) -&gt; (a3, a1) -&gt; Bool
+groupPolyDegree (a1, b1) (a2, b2) = b1 == b2</p>
+<p>dropZeroCoeff :: (Eq a, Num a) =&gt; (a, b) -&gt; Bool
+dropZeroCoeff (x1, x2) = x1 /= 0</p>
+<p>foldPolyCoeff :: Num a =&gt; a -&gt; (a, b) -&gt; a
+foldPolyCoeff y (x1, x2) = y + x1</p>
+<p>simplifyPoly :: (Num a, Eq a, Ord b) =&gt; [(a, b)] -&gt; [(a, b)]
+simplifyPoly poly = filter dropZeroCoeff [ (foldl foldPolyCoeff 0 x, snd (head x)) | x &lt;- groupBy groupPolyDegree (sortBy sortPolyDegree poly)]</p>
+<p>addPoly :: (Num a, Ord b, Eq a) =&gt; [(a, b)] -&gt; [(a, b)] -&gt; [(a, b)]
+addPoly a b = simplifyPoly (a ++ b)</p>
+<p>subtractPoly :: (Num a, Ord b, Eq a) =&gt; [(a, b)] -&gt; [(a, b)] -&gt; [(a, b)]
+subtractPoly a b = simplifyPoly (a ++ [(-(fst x), snd x) | x &lt;- b])</p>
+<p>timesPoly :: (Ord b, Foldable t, Num a, Num b, Eq a) =&gt; t (a, b) -&gt; [(a, b)] -&gt; [(a, b)]
+timesPoly a b = simplifyPoly (foldl (\acc (a1, a2) -&gt; acc ++ map ((b1, b2) -&gt; (a1*b1, a2 + b2)) b) [] a)</p>
+<p>make = do
+  let a = [(2, 1), (3, 2), (-2, 3), (-1, 0)]
+  let b = [(1, 2), (2, 1), (3, 4)]</p>
+<p>putStr "First polynome: "
+  print (showPoly a "x")
+  putStr "Second polynome: "
+  print (showPoly b "x")</p>
+<p>putStrLn ("(" ++ showPoly a "x" ++ ") + (" ++ showPoly b "x" ++ ") = " ++ showPoly (addPoly a b) "x")
+  putStrLn ("(" ++ showPoly a "x" ++ ") - (" ++ showPoly b "x" ++ ") = " ++ showPoly (subtractPoly a b) "x")
+  putStrLn ("(" ++ showPoly a "x" ++ ") * (" ++ showPoly b "x" ++ ") = " ++ showPoly (timesPoly a b) "x")
+```</p>
+<h2 id="_5">Результати виконання</h2>
+<p><img alt="Lab 8 Results" src="../img/lab_8/result_p.png" /></p>
+<h2 id="_6">Аналіз достовірності результатів</h2>
+<p><img alt="Lab 8 Results" src="../img/lab_8/result_1.png" />
+<img alt="Lab 8 Results" src="../img/lab_8/result_3.png" />
+<img alt="Lab 8 Results" src="../img/lab_8/result_2.png" /></p>
+<h2 id="_7">Висновки</h2>
+<p>У ході виконання цієї лабораторної роботи було опанувано теоретичні основи символьних обчислень мовами функціонального програмування. Розробити програми символьного диференціювання та реалізації арифметики поліномів</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lab_7/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Лабораторна робота 7" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Лабораторна робота 7
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.01824240.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ff0eccb3.min.js"></script>
+      
+    
+  </body>
+</html>
